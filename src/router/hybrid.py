@@ -125,16 +125,21 @@ class HybridRouter(BaseRouter):
         return extractor is None or extractor(query) is not None
 
     def cost(self, chosen: str, true: str) -> float:
-        c = self.config["costs"]
-        if chosen == true:
-            return 0.0
-        if chosen == LLM:
-            return c["missed_live_tool"] if true in LIVE_TOOLS else c["missed_calculator"]
-        if true == LLM:
-            return c["unneeded_tool"]
-        return c["wrong_tool"]
+        return mistake_cost(chosen, true, self.config["costs"])
 
     def expected_cost(self, action: str, probs: dict[str, float]) -> float:
         if action == CLARIFY:
             return self.config["costs"]["clarify"]
         return sum(p * self.cost(action, true) for true, p in probs.items())
+
+
+def mistake_cost(chosen: str, true: str, costs: dict) -> float:
+    """Cost of answering with `chosen` when `true` was right. Shared by the router (to decide)
+    and the evaluation (to score), so both use exactly the same definition."""
+    if chosen == true:
+        return 0.0
+    if chosen == LLM:
+        return costs["missed_live_tool"] if true in LIVE_TOOLS else costs["missed_calculator"]
+    if true == LLM:
+        return costs["unneeded_tool"]
+    return costs["wrong_tool"]

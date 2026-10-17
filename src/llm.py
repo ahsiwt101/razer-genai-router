@@ -8,6 +8,7 @@ Two implementations with the same generate() method:
   MockLLM       canned answer, no network: for tests and routing-only evaluation
 """
 import os
+import time
 
 from dotenv import load_dotenv
 
@@ -41,12 +42,20 @@ class GeminiClient:
         self._client = genai.Client(api_key=api_key)
         self._config = types.GenerateContentConfig(system_instruction=SYSTEM_PROMPT, temperature=0.3)
 
+    retries = 0  # how many rate-limit retries happened (the evaluation reports it: waits inflate latency)
+
     def generate(self, prompt: str) -> str:
-        try:
-            response = self._client.models.generate_content(model=self.model, contents=prompt, config=self._config)
-        except Exception as e:  # network errors, quota, bad model name...
-            raise LLMError(f"Gemini call failed: {type(e).__name__}: {e}") from e
-        return (response.text or "").strip()
+        for attempt in range(4):
+            try:
+                response = self._client.models.generate_content(model=self.model, contents=prompt, config=self._config)
+                return (response.text or "").strip()
+            except Exception as e:  # network errors, quota, bad model name...
+                rate_limited = "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e)
+                if rate_limited and attempt < 3:
+                    self.retries += 1
+                    time.sleep(2 ** (attempt + 1))  # 2s, 4s, 8s: back off politely, then try again
+                    continue
+                raise LLMError(f"Gemini call failed: {type(e).__name__}: {e}") from e
 
 
 class MockLLM:
