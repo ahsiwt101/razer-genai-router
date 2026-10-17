@@ -22,7 +22,7 @@ SYSTEM_PROMPT = (
     "whatever general, timeless help you can. If asked to perform an action you cannot do (booking, "
     "sending messages, setting alarms), say so and suggest what the user could do instead."
 )
-DEFAULT_MODEL = "gemini-2.5-flash"
+DEFAULT_MODEL = "gemini-3.5-flash-lite"
 
 
 class LLMError(RuntimeError):
