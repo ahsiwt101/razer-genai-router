@@ -34,7 +34,8 @@ class EmbeddingRouter(BaseRouter):
                  top_k: int = 3, model: SentenceTransformer | None = None):
         # top_k: how many nearest examples per route to average
         self.top_k = top_k
-        self.model = model or SentenceTransformer(model_name)
+        # cpu: as fast as the mac gpu for one short sentence (~6 ms), steadier tail latency
+        self.model = model or SentenceTransformer(model_name, device="cpu")
 
         routes = load_routes(routes_path)
         self.route_names = list(routes)
@@ -51,9 +52,14 @@ class EmbeddingRouter(BaseRouter):
         # hence routing query is just one embedding now
         self.example_vectors = self.embed(self.texts)
 
+        # warm-up
+        for _ in range(3):
+            self.embed(["warm up"])
+
     def embed(self, texts: list[str]) -> np.ndarray:
         # scales every vector to length 1
-        return self.model.encode(texts, normalize_embeddings=True, convert_to_numpy=True)
+        return self.model.encode(texts, normalize_embeddings=True, convert_to_numpy=True,
+                                 show_progress_bar=False)
 
     def similarities(self, query: str) -> np.ndarray:
         #cosine similarity between the query and every example

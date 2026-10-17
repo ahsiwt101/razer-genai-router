@@ -1,0 +1,48 @@
+{"query": "what's 64 squared", "route": "calculator", "category": "clear"}
+{"query": "1024 / 16", "route": "calculator", "category": "clear"}
+{"query": "how much is 3.5 times 12.25", "route": "calculator", "category": "clear"}
+{"query": "what's nineteen plus twenty-three", "route": "calculator", "category": "clear"}
+{"query": "what is 7% of 2,300", "route": "calculator", "category": "clear"}
+{"query": "how many minutes are in a week", "route": "calculator", "category": "clear"}
+{"query": "split 90 dollars between 4 friends", "route": "calculator", "category": "clear"}
+{"query": "convert 100 fahrenheit to celsius", "route": "calculator", "category": "overlap"}
+{"query": "is it going to be cloudy in Amsterdam tomorrow", "route": "weather", "category": "clear"}
+{"query": "how's the weather looking for my run this evening", "route": "weather", "category": "clear"}
+{"query": "will I need sunscreen in Phuket today", "route": "weather", "category": "clear"}
+{"query": "temperature in Mumbai right now", "route": "weather", "category": "clear"}
+{"query": "is it freezing in Oslo this morning", "route": "weather", "category": "clear"}
+{"query": "are there typhoon warnings for Taipei", "route": "weather", "category": "overlap", "acceptable": ["weather", "web_search"]}
+{"query": "do I need a coat tonight", "route": "weather", "category": "clear"}
+{"query": "will it drizzle in Vancouver later", "route": "weather", "category": "clear"}
+{"query": "who won the NBA finals this year", "route": "web_search", "category": "clear"}
+{"query": "what's the price of ethereum right now", "route": "web_search", "category": "clear"}
+{"query": "latest updates on the Mars mission", "route": "web_search", "category": "clear"}
+{"query": "who is the current CEO of Apple", "route": "web_search", "category": "clear"}
+{"query": "when does the next Marvel movie release", "route": "web_search", "category": "clear"}
+{"query": "what's the score in the Arsenal game", "route": "web_search", "category": "clear"}
+{"query": "top news stories in Singapore today", "route": "web_search", "category": "clear"}
+{"query": "is the Razer Blade 18 in stock", "route": "web_search", "category": "clear"}
+{"query": "what is a black hole", "route": "llm", "category": "no_tool"}
+{"query": "write a short poem about the ocean", "route": "llm", "category": "no_tool"}
+{"query": "how do I sort a dictionary by value in python", "route": "llm", "category": "no_tool"}
+{"query": "explain the difference between RAM and storage", "route": "llm", "category": "no_tool"}
+{"query": "summarize the causes of World War 1", "route": "llm", "category": "no_tool"}
+{"query": "give me a recipe for pancakes", "route": "llm", "category": "no_tool"}
+{"query": "what does API stand for", "route": "llm", "category": "no_tool"}
+{"query": "who painted the Mona Lisa", "route": "llm", "category": "no_tool"}
+{"query": "why does it rain more in the tropics", "route": "llm", "category": "overlap"}
+{"query": "what is the average temperature on Mars", "route": "llm", "category": "overlap"}
+{"query": "how do you calculate compound interest", "route": "llm", "category": "overlap"}
+{"query": "who won the first ever Formula 1 race", "route": "llm", "category": "overlap"}
+{"query": "what is the formula for the area of a circle", "route": "llm", "category": "overlap"}
+{"query": "what's the weather usually like in Iceland in winter", "route": "llm", "category": "overlap", "acceptable": ["llm", "web_search"]}
+{"query": "how hot does it get in Death Valley", "route": "llm", "category": "overlap", "acceptable": ["llm", "web_search"]}
+{"query": "is bitcoin a good investment", "route": "llm", "category": "overlap"}
+{"query": "what's it like in Paris", "route": "weather", "category": "ambiguous", "acceptable": ["weather", "llm", "clarify"]}
+{"query": "tell me about Apple", "route": "llm", "category": "ambiguous", "acceptable": ["llm", "web_search", "clarify"]}
+{"query": "how's the market", "route": "web_search", "category": "ambiguous", "acceptable": ["web_search", "clarify"]}
+{"query": "how many people live in Tokyo", "route": "web_search", "category": "ambiguous", "acceptable": ["web_search", "llm"]}
+{"query": "what's 10% of the current price of gold", "route": "web_search", "category": "multi_step", "plan": ["web_search", "calculator"]}
+{"query": "how much warmer is Singapore than London right now", "route": "weather", "category": "multi_step", "plan": ["weather", "weather", "calculator"]}
+{"query": "book me a flight to Bali", "route": "llm", "category": "out_of_scope"}
+{"query": "set an alarm for 7am", "route": "llm", "category": "out_of_scope"}
