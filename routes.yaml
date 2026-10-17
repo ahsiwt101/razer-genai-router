@@ -1,0 +1,125 @@
+# training data for embedding router and classifier
+#
+# each route has:
+#   description    one sentence on what the route is for 
+#   examples       typical queries for this route, deliberately varied in wording
+#   hard_examples  tricky queries that belong to one, looks like another one.
+#
+
+routes:
+  calculator:
+    description: Exact arithmetic or numeric computation on numbers given in the query.
+    examples:
+      - what is 37 * 412
+      - calculate 1250 divided by 25
+      - what's 7 to the power of 5
+      - square root of 2025
+      - how much is 18% of 340
+      - add 456 and 789
+      - subtract 129 from 1000
+      - what is twelve times thirteen
+      - multiply three hundred by forty
+      - what's half of 846
+      - compute (45 + 55) * 3
+      - what is 5 factorial
+      - what's the average of 12, 18 and 30
+      - can you work out 1999 minus 457
+      - what do I get if I double 1,250
+      - how much is a 15 percent tip on 82 dollars
+      - what is 2 to the 16th
+      - find the cube of 9
+      - convert 3/8 to a decimal
+      - how many seconds are in 3 hours
+    hard_examples:
+      - if I split a 240 dollar bill among 6 people how much does each pay
+      - a train goes 60 km per hour for 2.5 hours, how far does it travel
+      - what's 20 percent off a 45 dollar shirt
+
+  weather:
+    description: Current or forecast weather conditions for a place.
+    examples:
+      - what's the weather like in London
+      - is it going to rain tomorrow in Kuala Lumpur
+      - will it be sunny this weekend in Sydney
+      - how hot will it be in Dubai today
+      - do I need a jacket in Seoul tonight
+      - what's the forecast for Paris this week
+      - is it snowing in Toronto right now
+      - current temperature in New York
+      - how humid is it in Jakarta
+      - should I bring an umbrella to work
+      - is there a storm coming to Manila
+      - what's the UV index in Perth today
+      - will it be windy in Chicago tomorrow
+      - how cold is it outside
+      - what's the high and low for Berlin tomorrow
+      - any chance of thunderstorms this afternoon
+      - weather check for Hong Kong
+      - is it raining in Penang
+      - what should I wear today, is it chilly
+    hard_examples:
+      - is it nice out in Bali right now
+      - what's it like outside in Melbourne at the moment
+      - is it a good day for a picnic or will it be wet
+
+  web_search:
+    description: Current events, live data, or facts that change over time and must be looked up.
+    examples:
+      - who won the champions league final this year
+      - latest news on the US election
+      - what's the current price of bitcoin
+      - who is the CEO of OpenAI right now
+      - score of last night's Lakers game
+      - when is the next iPhone coming out
+      - what are the top headlines today
+      - is the new Zelda game out yet
+      - who is the current prime minister of Japan
+      - Razer's latest product announcements
+      - how did the stock market close yesterday
+      - what movies are showing in cinemas this week
+      - best rated ramen restaurants in Singapore
+      - what's trending on social media right now
+      - MotoGP standings after the last round
+      - what is the exchange rate from SGD to USD today
+      - has the Fed changed interest rates recently
+      - find reviews of the Razer Blade 16
+      - what happened in the news this morning
+      - what's the stock price of Microsoft
+    hard_examples:
+      - who is the richest person in the world
+      - what's the latest version of Python
+      - is Taylor Swift touring Asia
+
+  llm:
+    description: General knowledge, explanations, writing, coding help, or reasoning the model can answer by itself.
+    examples:
+      - explain how neural networks learn
+      - what is the difference between TCP and UDP
+      - write a haiku about autumn
+      - summarize the plot of Romeo and Juliet
+      - how do I reverse a list in python
+      - what is photosynthesis
+      - give me tips for a job interview
+      - translate good morning into French
+      - what causes inflation
+      - who wrote Pride and Prejudice
+      - how does a hash map work
+      - help me write an email asking for a deadline extension
+      - what does the word ephemeral mean
+      - explain the theory of relativity simply
+      - what are the pros and cons of remote work
+      - tell me a joke
+      - how do vaccines work
+      - what is the capital of Australia
+      - brainstorm names for a gaming cafe
+      - what is overfitting in machine learning
+    hard_examples:
+      - how cold is outer space
+      - at what temperature does water boil
+      - what is the climate like in the Sahara desert
+      - how do meteorologists predict the weather
+      - what is a hurricane
+      - explain what a derivative is in calculus
+      - what is the Pythagorean theorem
+      - who won the 1998 World Cup
+      - what is the history of the stock market
