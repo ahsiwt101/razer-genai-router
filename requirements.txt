@@ -1,0 +1,17 @@
+# --- Routing (local ML models) ---
+sentence-transformers>=5.0   # embedding model (bi-encoder) + reranker (cross-encoder); pulls in PyTorch
+scikit-learn>=1.5            # logistic-regression classifier + calibration
+numpy>=2.0                   # vector maths (cosine similarity)
+
+# --- LLM ---
+google-genai>=2.0            # official Google Gemini SDK (plain text generation only, no tool calling)
+
+# --- Config / utilities ---
+pyyaml>=6.0                  # read routes.yaml and config.yaml
+python-dotenv>=1.0           # load GEMINI_API_KEY from .env
+
+# --- Evaluation ---
+matplotlib>=3.9              # threshold-sweep and calibration plots
+
+# --- Testing ---
+pytest>=8.0
