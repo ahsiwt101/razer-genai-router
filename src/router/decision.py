@@ -8,6 +8,8 @@ every router returns a RoutingDecision, which is a dataclass with the following 
 - hints: list[str], weak signals noticed along the way
 - fallback_used: bool, True if we were unsure and fell back
 - latency_ms: float, time spent routing, filled in by BaseRouter
+- plan: list[dict], multi-step tool sequence (empty for single-step)
+- question: str | None, the clarifying question when route == "clarify"
 
 this allows us to compare by just swapping routers later on 
 """
@@ -20,6 +22,7 @@ LLM = "llm"
 CALCULATOR = "calculator"
 WEATHER = "weather"
 WEB_SEARCH = "web_search"
+CLARIFY = "clarify"  #  the system asks the user a question instead of guessing
 
 
 @dataclass
@@ -32,6 +35,8 @@ class RoutingDecision:
     hints: list[str] = field(default_factory=list)          # weak signals noticed along the way
     fallback_used: bool = False                             # True if we were unsure and fell back
     latency_ms: float = 0.0                                 # time spent routing, filled in by BaseRouter
+    plan: list[dict] = field(default_factory=list)          # multi-step: [{"tool": ..., "argument": ...}, ...]
+    question: str | None = None                             # route == "clarify": what to ask the user
 
     def to_dict(self) -> dict:
         d = asdict(self)

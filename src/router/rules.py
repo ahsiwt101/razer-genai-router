@@ -62,6 +62,8 @@ _EXPLICIT_SEARCH = re.compile(r"\b(search (for|the web|online)|google|look up|lo
 _EXPLANATORY = re.compile(
     r"^(explain|describe|define|why|how (does|do|did|can|would)|what (causes|is the difference|does .* mean))\b"
 )
+# climate (typical conditions) vs weather (conditions now): "what's the weather usually like in iceland in winter"
+_CLIMATE = re.compile(r"\b(usually|typically|normally|on average|average|in (winter|summer|spring|autumn|fall)|climate)\b")
 
 
 class RuleRouter(BaseRouter):
@@ -114,6 +116,8 @@ class RuleRouter(BaseRouter):
     @staticmethod
     def _weather(q: str, hints: list[str]):
         if "explanatory" in hints:  # "how does rain form?" is a science question, not a forecast
+            return None
+        if _CLIMATE.search(q):  # typical conditions are general knowledge, not a live lookup
             return None
         if _WEATHER_CORE.search(q):
             return WEATHER, 0.93, "Contains an unambiguous weather word"

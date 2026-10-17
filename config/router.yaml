@@ -1,0 +1,18 @@
+# hybrid router settings. 
+# thresholds apply to CALIBRATED confidence = P(top route is correct) 
+
+accept_threshold: 0.63     # trust the classifier's top route
+use_reranker: false        # cross-encoder tie-breaker for ambiguous queries
+default_location: Singapore  # for weather query with no city 
+
+#  router picks the action with the lowest expected cost:
+#   expected_cost(action) = sum over routes r of  P(r is the true route) * cost(action, r)
+
+costs:
+  missed_calculator: 2     
+  missed_live_tool: 1.5    
+                          
+  wrong_tool: 3           
+  unneeded_tool: 1         
+  clarify: 1.1          
+                           

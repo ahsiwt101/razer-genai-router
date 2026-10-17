@@ -7,7 +7,8 @@ from urllib.parse import quote_plus
 
 from .base import ToolResult
 
-_NUMERIC_HINTS = ("price", "cost", "rate", "worth", "value")
+# so every multi-step plan gets a value to compute on
+_NUMERIC_HINTS = ("price", "cost", "rate", "worth", "value", "population", "salary", "market cap", "revenue", "gdp")
 
 def run(query: str, simulated_latency_ms: float = 0) -> ToolResult:
     if not query or not query.strip():
