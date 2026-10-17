@@ -1,0 +1,63 @@
+{"query": "what is 832 divided by 13", "route": "calculator", "category": "clear"}
+{"query": "calculate 15.5 * 4", "route": "calculator", "category": "clear"}
+{"query": "what's 3 to the power of 7", "route": "calculator", "category": "clear"}
+{"query": "how much is 12.5% of 640", "route": "calculator", "category": "clear"}
+{"query": "what's eighty four times six", "route": "calculator", "category": "clear"}
+{"query": "sqrt of 729", "route": "calculator", "category": "clear"}
+{"query": "what is 1500 minus 275 plus 60", "route": "calculator", "category": "clear"}
+{"query": "how many hours are in 2 weeks", "route": "calculator", "category": "clear"}
+{"query": "what's the weather forecast for Bangkok tomorrow", "route": "weather", "category": "clear"}
+{"query": "is it raining in Hanoi right now", "route": "weather", "category": "clear"}
+{"query": "how warm is it in Lisbon today", "route": "weather", "category": "clear"}
+{"query": "will there be thunderstorms in Kuala Lumpur this evening", "route": "weather", "category": "clear"}
+{"query": "do I need an umbrella in Taipei today", "route": "weather", "category": "clear"}
+{"query": "what's the temperature like in Cape Town right now", "route": "weather", "category": "clear"}
+{"query": "is it windy in Wellington this afternoon", "route": "weather", "category": "clear"}
+{"query": "will it snow in Sapporo this weekend", "route": "weather", "category": "clear"}
+{"query": "who won the Ballon d'Or this year", "route": "web_search", "category": "clear"}
+{"query": "latest news about Nvidia", "route": "web_search", "category": "clear"}
+{"query": "what's the current price of Tesla stock", "route": "web_search", "category": "clear"}
+{"query": "when is the next SpaceX launch", "route": "web_search", "category": "clear"}
+{"query": "what are today's top stories in tech", "route": "web_search", "category": "clear"}
+{"query": "who is the current president of France", "route": "web_search", "category": "clear"}
+{"query": "results of yesterday's Premier League matches", "route": "web_search", "category": "clear"}
+{"query": "what's the newest Razer mouse", "route": "web_search", "category": "clear"}
+{"query": "what is the theory of evolution", "route": "llm", "category": "no_tool"}
+{"query": "write a limerick about a cat", "route": "llm", "category": "no_tool"}
+{"query": "how do I center a div in CSS", "route": "llm", "category": "no_tool"}
+{"query": "explain recursion with an example", "route": "llm", "category": "no_tool"}
+{"query": "what's the difference between a virus and bacteria", "route": "llm", "category": "no_tool"}
+{"query": "give me three tips for better sleep", "route": "llm", "category": "no_tool"}
+{"query": "translate thank you into Japanese", "route": "llm", "category": "no_tool"}
+{"query": "who discovered penicillin", "route": "llm", "category": "no_tool"}
+{"query": "what are the main themes of 1984 by George Orwell", "route": "llm", "category": "no_tool"}
+{"query": "how does public key cryptography work", "route": "llm", "category": "no_tool"}
+{"query": "how does a weather radar work", "route": "llm", "category": "overlap"}
+{"query": "what is the hottest temperature ever recorded on Earth", "route": "llm", "category": "overlap", "acceptable": ["llm", "web_search"]}
+{"query": "what does a 70% chance of rain mean", "route": "llm", "category": "overlap"}
+{"query": "how do I calculate the area of a triangle", "route": "llm", "category": "overlap"}
+{"query": "what is pi to 5 decimal places", "route": "llm", "category": "overlap"}
+{"query": "who won the World Cup in 2010", "route": "llm", "category": "overlap"}
+{"query": "what was Apple's first product", "route": "llm", "category": "overlap"}
+{"query": "is 17 a prime number", "route": "llm", "category": "overlap"}
+{"query": "convert 25 celsius to fahrenheit", "route": "calculator", "category": "overlap"}
+{"query": "what's 30 degrees celsius in fahrenheit", "route": "calculator", "category": "overlap"}
+{"query": "what is the stock market", "route": "llm", "category": "overlap"}
+{"query": "how much does it usually rain in London in November", "route": "llm", "category": "overlap", "acceptable": ["llm", "web_search"]}
+{"query": "what's the current population of the world", "route": "web_search", "category": "overlap", "acceptable": ["web_search", "llm"]}
+{"query": "Jaguar", "route": "llm", "category": "ambiguous", "acceptable": ["llm", "web_search", "clarify"]}
+{"query": "what's happening in Tokyo", "route": "web_search", "category": "ambiguous", "acceptable": ["web_search", "weather", "clarify"]}
+{"query": "is it nice in Seoul", "route": "weather", "category": "ambiguous", "acceptable": ["weather", "llm", "clarify"]}
+{"query": "tell me about the Fed", "route": "llm", "category": "ambiguous", "acceptable": ["llm", "web_search", "clarify"]}
+{"query": "how are the Lakers doing", "route": "web_search", "category": "ambiguous", "acceptable": ["web_search", "clarify"]}
+{"query": "what's new with OpenAI", "route": "web_search", "category": "ambiguous", "acceptable": ["web_search", "clarify"]}
+{"query": "what's 20% of the price of an iPhone 16", "route": "web_search", "category": "multi_step", "plan": ["web_search", "calculator"]}
+{"query": "double the current price of bitcoin", "route": "web_search", "category": "multi_step", "plan": ["web_search", "calculator"]}
+{"query": "is Tokyo warmer than Seoul right now", "route": "weather", "category": "multi_step", "plan": ["weather", "weather", "calculator"]}
+{"query": "how much colder is Oslo than Madrid", "route": "weather", "category": "multi_step", "plan": ["weather", "weather", "calculator"]}
+{"query": "what's the price of gold divided by 3", "route": "web_search", "category": "multi_step", "plan": ["web_search", "calculator"]}
+{"query": "order me a pizza", "route": "llm", "category": "out_of_scope"}
+{"query": "send an email to my boss", "route": "llm", "category": "out_of_scope"}
+{"query": "remind me to call mom at 6", "route": "llm", "category": "out_of_scope"}
+{"query": "can you turn off the lights", "route": "llm", "category": "out_of_scope"}
+{"query": "I want to book a hotel in Paris", "route": "llm", "category": "out_of_scope"}

@@ -1,0 +1,756 @@
+{
+  "test": {
+    "rules": {
+      "n": 63,
+      "correct": 48,
+      "accuracy": 0.7619047619047619,
+      "strict_accuracy": 0.746031746031746,
+      "incorrect_tool_selection_rate": 0.05555555555555555,
+      "missed_tool_rate": 0.3055555555555556,
+      "unnecessary_tool_rate": 0.0,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.0,
+      "mean_mistake_cost": 0.4126984126984127,
+      "multi_step_plan_accuracy": 0.0,
+      "per_category_accuracy": {
+        "ambiguous": 0.5,
+        "clear": 0.8333333333333334,
+        "multi_step": 0.2,
+        "no_tool": 1.0,
+        "out_of_scope": 1.0,
+        "overlap": 0.6923076923076923
+      },
+      "by_stage": {
+        "rules": {
+          "count": 20,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.009416500688530505
+        },
+        "rules_default": {
+          "count": 37,
+          "accuracy": 0.7027027027027027,
+          "latency_p50_ms": 0.008374976459890604
+        },
+        "rules_weak": {
+          "count": 6,
+          "accuracy": 0.3333333333333333,
+          "latency_p50_ms": 0.012125005014240742
+        }
+      },
+      "latency_ms": {
+        "p50": 0.00899998121894896,
+        "p95": 0.014683889457955956,
+        "mean": 0.011309490738702672
+      },
+      "latency_by_route_ms": {
+        "calculator": {
+          "p50": 0.008749993867240846,
+          "p95": 0.09350023901788518,
+          "mean": 0.026659831443491083
+        },
+        "llm": {
+          "p50": 0.008374976459890604,
+          "p95": 0.013358012074604625,
+          "mean": 0.008837810742693979
+        },
+        "weather": {
+          "p50": 0.009790994226932526,
+          "p95": 0.012937496649101377,
+          "mean": 0.010170270053839142
+        },
+        "web_search": {
+          "p50": 0.009790994226932526,
+          "p95": 0.024858600227162235,
+          "mean": 0.012629662200601565
+        }
+      }
+    },
+    "embedding": {
+      "n": 63,
+      "correct": 45,
+      "accuracy": 0.7142857142857143,
+      "strict_accuracy": 0.6984126984126984,
+      "incorrect_tool_selection_rate": 0.08333333333333333,
+      "missed_tool_rate": 0.0,
+      "unnecessary_tool_rate": 0.5652173913043478,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.0,
+      "mean_mistake_cost": 0.38095238095238093,
+      "multi_step_plan_accuracy": 0.0,
+      "per_category_accuracy": {
+        "ambiguous": 1.0,
+        "clear": 1.0,
+        "multi_step": 0.6,
+        "no_tool": 0.7,
+        "out_of_scope": 0.2,
+        "overlap": 0.3076923076923077
+      },
+      "by_stage": {
+        "embedding": {
+          "count": 63,
+          "accuracy": 0.7142857142857143,
+          "latency_p50_ms": 6.314208003459498
+        }
+      },
+      "latency_ms": {
+        "p50": 6.314208003459498,
+        "p95": 7.087362810852937,
+        "mean": 6.383232826400282
+      },
+      "latency_by_route_ms": {
+        "calculator": {
+          "p50": 6.37472901144065,
+          "p95": 7.458281252183951,
+          "mean": 6.4576354361634
+        },
+        "weather": {
+          "p50": 6.185562495375052,
+          "p95": 6.805035751312971,
+          "mean": 6.250803279625769
+        },
+        "web_search": {
+          "p50": 6.459812997491099,
+          "p95": 7.215629333222751,
+          "mean": 6.547756947434714
+        },
+        "llm": {
+          "p50": 6.177417002618313,
+          "p95": 6.629374998738058,
+          "mean": 6.222492454319515
+        }
+      }
+    },
+    "classifier": {
+      "n": 63,
+      "correct": 54,
+      "accuracy": 0.8571428571428571,
+      "strict_accuracy": 0.8412698412698413,
+      "incorrect_tool_selection_rate": 0.027777777777777776,
+      "missed_tool_rate": 0.05555555555555555,
+      "unnecessary_tool_rate": 0.21739130434782608,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.0,
+      "mean_mistake_cost": 0.1984126984126984,
+      "multi_step_plan_accuracy": 0.0,
+      "per_category_accuracy": {
+        "ambiguous": 1.0,
+        "clear": 0.9583333333333334,
+        "multi_step": 0.8,
+        "no_tool": 1.0,
+        "out_of_scope": 0.8,
+        "overlap": 0.5384615384615384
+      },
+      "by_stage": {
+        "classifier": {
+          "count": 63,
+          "accuracy": 0.8571428571428571,
+          "latency_p50_ms": 5.954749998636544
+        }
+      },
+      "latency_ms": {
+        "p50": 5.954749998636544,
+        "p95": 6.318612484028563,
+        "mean": 6.002676554046394
+      },
+      "latency_by_route_ms": {
+        "calculator": {
+          "p50": 6.0430209850892425,
+          "p95": 6.355733433156274,
+          "mean": 6.080050780188425
+        },
+        "weather": {
+          "p50": 5.933083491981961,
+          "p95": 6.138997807283886,
+          "mean": 5.977621498459484
+        },
+        "web_search": {
+          "p50": 5.85412498912774,
+          "p95": 6.142416191869415,
+          "mean": 5.9063804626930505
+        },
+        "llm": {
+          "p50": 5.964604002656415,
+          "p95": 6.350596161792055,
+          "mean": 6.0327612300170586
+        }
+      }
+    },
+    "hybrid": {
+      "n": 63,
+      "correct": 58,
+      "accuracy": 0.9206349206349206,
+      "strict_accuracy": 0.9047619047619048,
+      "incorrect_tool_selection_rate": 0.0,
+      "missed_tool_rate": 0.08333333333333333,
+      "unnecessary_tool_rate": 0.043478260869565216,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.15873015873015872,
+      "mean_mistake_cost": 0.1111111111111111,
+      "multi_step_plan_accuracy": 0.8,
+      "per_category_accuracy": {
+        "ambiguous": 1.0,
+        "clear": 0.9583333333333334,
+        "multi_step": 0.8,
+        "no_tool": 1.0,
+        "out_of_scope": 1.0,
+        "overlap": 0.7692307692307693
+      },
+      "by_stage": {
+        "rules": {
+          "count": 19,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.01391599653288722
+        },
+        "classifier": {
+          "count": 30,
+          "accuracy": 0.9,
+          "latency_p50_ms": 6.204542005434632
+        },
+        "fallback": {
+          "count": 6,
+          "accuracy": 0.6666666666666666,
+          "latency_p50_ms": 6.4502494933549315
+        },
+        "planner": {
+          "count": 4,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.012416989193297923
+        },
+        "out_of_scope": {
+          "count": 4,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.0038959988160058856
+        }
+      },
+      "latency_ms": {
+        "p50": 5.956416978733614,
+        "p95": 7.875966685242019,
+        "mean": 4.501568046324547
+      },
+      "latency_by_route_ms": {
+        "calculator": {
+          "p50": 0.014165998436510563,
+          "p95": 6.824108399450779,
+          "mean": 2.1664768864866346
+        },
+        "weather": {
+          "p50": 0.014520512195304036,
+          "p95": 18.412930949125425,
+          "mean": 3.2747984150773846
+        },
+        "web_search": {
+          "p50": 6.017416017130017,
+          "p95": 19.939157989574596,
+          "mean": 5.295730399666354
+        },
+        "llm": {
+          "p50": 6.091207993449643,
+          "p95": 7.345841694041155,
+          "mean": 5.383961406079362
+        }
+      }
+    },
+    "hybrid+rerank": {
+      "n": 63,
+      "correct": 57,
+      "accuracy": 0.9047619047619048,
+      "strict_accuracy": 0.8888888888888888,
+      "incorrect_tool_selection_rate": 0.0,
+      "missed_tool_rate": 0.08333333333333333,
+      "unnecessary_tool_rate": 0.08695652173913043,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.15873015873015872,
+      "mean_mistake_cost": 0.12698412698412698,
+      "multi_step_plan_accuracy": 0.8,
+      "per_category_accuracy": {
+        "ambiguous": 1.0,
+        "clear": 0.9583333333333334,
+        "multi_step": 0.8,
+        "no_tool": 1.0,
+        "out_of_scope": 1.0,
+        "overlap": 0.6923076923076923
+      },
+      "by_stage": {
+        "rules": {
+          "count": 19,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.013416021829470992
+        },
+        "classifier": {
+          "count": 30,
+          "accuracy": 0.9,
+          "latency_p50_ms": 7.065353987854905
+        },
+        "fallback": {
+          "count": 6,
+          "accuracy": 0.5,
+          "latency_p50_ms": 28.597354001249187
+        },
+        "planner": {
+          "count": 4,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.008895498467609286
+        },
+        "out_of_scope": {
+          "count": 4,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.003895504050888121
+        }
+      },
+      "latency_ms": {
+        "p50": 6.7378329986240715,
+        "p95": 28.254145503160544,
+        "mean": 6.159929224633656
+      },
+      "latency_by_route_ms": {
+        "calculator": {
+          "p50": 0.016250007320195436,
+          "p95": 7.631517015397549,
+          "mean": 2.438662117735172
+        },
+        "weather": {
+          "p50": 0.013708980986848474,
+          "p95": 16.941124998265842,
+          "mean": 3.5331185365346474
+        },
+        "web_search": {
+          "p50": 6.818791996920481,
+          "p95": 14.044012411613927,
+          "mean": 5.323999939719215
+        },
+        "llm": {
+          "p50": 6.936166508239694,
+          "p95": 28.702770752715878,
+          "mean": 9.243732385444813
+        }
+      }
+    }
+  },
+  "robustness": {
+    "rules": {
+      "n": 20,
+      "correct": 11,
+      "accuracy": 0.55,
+      "strict_accuracy": 0.55,
+      "incorrect_tool_selection_rate": 0.07142857142857142,
+      "missed_tool_rate": 0.5714285714285714,
+      "unnecessary_tool_rate": 0.0,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.0,
+      "mean_mistake_cost": 0.825,
+      "multi_step_plan_accuracy": 0.0,
+      "per_category_accuracy": {
+        "clear": 0.4166666666666667,
+        "multi_step": 0.0,
+        "no_tool": 1.0,
+        "out_of_scope": 1.0,
+        "overlap": 0.5
+      },
+      "by_stage": {
+        "rules_default": {
+          "count": 14,
+          "accuracy": 0.42857142857142855,
+          "latency_p50_ms": 0.007875001756474376
+        },
+        "rules": {
+          "count": 4,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.004687506589107215
+        },
+        "rules_weak": {
+          "count": 2,
+          "accuracy": 0.5,
+          "latency_p50_ms": 0.007791502866894007
+        }
+      },
+      "latency_ms": {
+        "p50": 0.0076669966802001,
+        "p95": 0.01402261987095699,
+        "mean": 0.007866750820539892
+      },
+      "latency_by_route_ms": {
+        "llm": {
+          "p50": 0.007875001756474376,
+          "p95": 0.015160210023168473,
+          "mean": 0.008714428986422718
+        },
+        "calculator": {
+          "p50": 0.003854001988656819,
+          "p95": 0.003947604272980243,
+          "mean": 0.003854001988656819
+        },
+        "web_search": {
+          "p50": 0.007541995728388429,
+          "p95": 0.00799110857769847,
+          "mean": 0.007000004795069496
+        },
+        "weather": {
+          "p50": 0.006624992238357663,
+          "p95": 0.006624992238357663,
+          "mean": 0.006624992238357663
+        }
+      }
+    },
+    "embedding": {
+      "n": 20,
+      "correct": 18,
+      "accuracy": 0.9,
+      "strict_accuracy": 0.9,
+      "incorrect_tool_selection_rate": 0.07142857142857142,
+      "missed_tool_rate": 0.0,
+      "unnecessary_tool_rate": 0.16666666666666666,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.0,
+      "mean_mistake_cost": 0.2,
+      "multi_step_plan_accuracy": 0.0,
+      "per_category_accuracy": {
+        "clear": 1.0,
+        "multi_step": 0.0,
+        "no_tool": 1.0,
+        "out_of_scope": 0.0,
+        "overlap": 1.0
+      },
+      "by_stage": {
+        "embedding": {
+          "count": 20,
+          "accuracy": 0.9,
+          "latency_p50_ms": 6.965979002416134
+        }
+      },
+      "latency_ms": {
+        "p50": 6.965979002416134,
+        "p95": 7.6916690391954035,
+        "mean": 7.050743547733873
+      },
+      "latency_by_route_ms": {
+        "calculator": {
+          "p50": 6.8893540010321885,
+          "p95": 7.6272185033303685,
+          "mean": 7.0839719992363825
+        },
+        "weather": {
+          "p50": 7.234207994770259,
+          "p95": 7.608983590034768,
+          "mean": 7.185716595267877
+        },
+        "web_search": {
+          "p50": 6.643749482464045,
+          "p95": 7.059506147925276,
+          "mean": 6.726353742124047
+        },
+        "llm": {
+          "p50": 7.11958299507387,
+          "p95": 7.586600410286337,
+          "mean": 7.135408202884719
+        }
+      }
+    },
+    "classifier": {
+      "n": 20,
+      "correct": 19,
+      "accuracy": 0.95,
+      "strict_accuracy": 0.95,
+      "incorrect_tool_selection_rate": 0.0,
+      "missed_tool_rate": 0.0,
+      "unnecessary_tool_rate": 0.16666666666666666,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.0,
+      "mean_mistake_cost": 0.05,
+      "multi_step_plan_accuracy": 0.0,
+      "per_category_accuracy": {
+        "clear": 1.0,
+        "multi_step": 1.0,
+        "no_tool": 1.0,
+        "out_of_scope": 0.0,
+        "overlap": 1.0
+      },
+      "by_stage": {
+        "classifier": {
+          "count": 20,
+          "accuracy": 0.95,
+          "latency_p50_ms": 6.956771016120911
+        }
+      },
+      "latency_ms": {
+        "p50": 6.956771016120911,
+        "p95": 11.716072891431399,
+        "mean": 7.675695851503406
+      },
+      "latency_by_route_ms": {
+        "calculator": {
+          "p50": 7.123957999283448,
+          "p95": 7.245958398561925,
+          "mean": 6.981650000670925
+        },
+        "weather": {
+          "p50": 9.503312496235594,
+          "p95": 16.461239290947557,
+          "mean": 10.70427074591862
+        },
+        "web_search": {
+          "p50": 6.82091701310128,
+          "p95": 7.077468253555708,
+          "mean": 6.85116667591501
+        },
+        "llm": {
+          "p50": 6.85395798063837,
+          "p95": 7.099525595549494,
+          "mean": 6.9363167975097895
+        }
+      }
+    },
+    "hybrid": {
+      "n": 20,
+      "correct": 18,
+      "accuracy": 0.9,
+      "strict_accuracy": 0.9,
+      "incorrect_tool_selection_rate": 0.0,
+      "missed_tool_rate": 0.14285714285714285,
+      "unnecessary_tool_rate": 0.0,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.2,
+      "mean_mistake_cost": 0.2,
+      "multi_step_plan_accuracy": 0.0,
+      "per_category_accuracy": {
+        "clear": 0.8333333333333334,
+        "multi_step": 1.0,
+        "no_tool": 1.0,
+        "out_of_scope": 1.0,
+        "overlap": 1.0
+      },
+      "by_stage": {
+        "fallback": {
+          "count": 3,
+          "accuracy": 0.3333333333333333,
+          "latency_p50_ms": 7.06633401568979
+        },
+        "rules": {
+          "count": 4,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.014228979125618935
+        },
+        "classifier": {
+          "count": 12,
+          "accuracy": 1.0,
+          "latency_p50_ms": 6.869021002785303
+        },
+        "out_of_scope": {
+          "count": 1,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.010707997716963291
+        }
+      },
+      "latency_ms": {
+        "p50": 6.813978994614445,
+        "p95": 7.139702090353239,
+        "mean": 5.210379348136485
+      },
+      "latency_by_route_ms": {
+        "llm": {
+          "p50": 6.939416998648085,
+          "p95": 7.197202292445581,
+          "mean": 6.111958373367088
+        },
+        "calculator": {
+          "p50": 0.012082979083061218,
+          "p95": 6.135120504768564,
+          "mean": 2.2778333319971957
+        },
+        "weather": {
+          "p50": 6.782250507967547,
+          "p95": 6.924148250254802,
+          "mean": 5.132771249918733
+        },
+        "web_search": {
+          "p50": 6.922583997948095,
+          "p95": 7.115333393448964,
+          "mean": 5.589466996025294
+        }
+      }
+    },
+    "hybrid+rerank": {
+      "n": 20,
+      "correct": 18,
+      "accuracy": 0.9,
+      "strict_accuracy": 0.9,
+      "incorrect_tool_selection_rate": 0.0,
+      "missed_tool_rate": 0.14285714285714285,
+      "unnecessary_tool_rate": 0.0,
+      "clarify_rate": 0.0,
+      "fallback_rate": 0.2,
+      "mean_mistake_cost": 0.2,
+      "multi_step_plan_accuracy": 0.0,
+      "per_category_accuracy": {
+        "clear": 0.8333333333333334,
+        "multi_step": 1.0,
+        "no_tool": 1.0,
+        "out_of_scope": 1.0,
+        "overlap": 1.0
+      },
+      "by_stage": {
+        "fallback": {
+          "count": 3,
+          "accuracy": 0.3333333333333333,
+          "latency_p50_ms": 26.495000027352944
+        },
+        "rules": {
+          "count": 4,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.017646001651883125
+        },
+        "classifier": {
+          "count": 12,
+          "accuracy": 1.0,
+          "latency_p50_ms": 7.259000005433336
+        },
+        "out_of_scope": {
+          "count": 1,
+          "accuracy": 1.0,
+          "latency_p50_ms": 0.006749993190169334
+        }
+      },
+      "latency_ms": {
+        "p50": 7.176062485086732,
+        "p95": 28.33570238290122,
+        "mean": 9.96799584972905
+      },
+      "latency_by_route_ms": {
+        "llm": {
+          "p50": 7.259000005433336,
+          "p95": 27.028573231655173,
+          "mean": 11.099276118329726
+        },
+        "calculator": {
+          "p50": 0.018624996300786734,
+          "p95": 5.556212490773759,
+          "mean": 2.0653889999569706
+        },
+        "weather": {
+          "p50": 8.94716648326721,
+          "p95": 28.298318703309626,
+          "mean": 12.325718496867921
+        },
+        "web_search": {
+          "p50": 10.485042002983391,
+          "p95": 23.54724162141792,
+          "mean": 11.013333412120119
+        }
+      }
+    }
+  },
+  "accuracy_ci95": {
+    "rules": [
+      0.6507936507936508,
+      0.8571428571428571
+    ],
+    "embedding": [
+      0.6031746031746031,
+      0.8253968253968254
+    ],
+    "classifier": [
+      0.7777777777777778,
+      0.9365079365079365
+    ],
+    "hybrid": [
+      0.8571428571428571,
+      0.9841269841269841
+    ],
+    "hybrid+rerank": [
+      0.8253968253968254,
+      0.9682539682539683
+    ]
+  },
+  "comparisons": {
+    "hybrid vs rules": {
+      "mean_diff": 0.15873015873015872,
+      "ci_low": 0.047619047619047616,
+      "ci_high": 0.2698412698412698,
+      "significant": true
+    },
+    "hybrid vs embedding": {
+      "mean_diff": 0.20634920634920634,
+      "ci_low": 0.09523809523809523,
+      "ci_high": 0.31746031746031744,
+      "significant": true
+    },
+    "hybrid vs classifier": {
+      "mean_diff": 0.06349206349206349,
+      "ci_low": 0.015873015873015872,
+      "ci_high": 0.12698412698412698,
+      "significant": true
+    },
+    "hybrid vs hybrid+rerank": {
+      "mean_diff": 0.015873015873015872,
+      "ci_low": 0.0,
+      "ci_high": 0.047619047619047616,
+      "significant": false
+    }
+  },
+  "calibration": {
+    "embedding": {
+      "ece": 0.0409034206721,
+      "auroc": 0.817283950617284
+    },
+    "classifier": {
+      "ece": 0.027047686402293537,
+      "auroc": 0.7139917695473251
+    }
+  },
+  "end_to_end": {
+    "llm": "Gemini (gemini-3.5-flash-lite)",
+    "final_route_accuracy": 0.9206349206349206,
+    "by_final_route": {
+      "calculator": {
+        "count": 9,
+        "total_p50": 0.0635830219835043,
+        "total_p95": 20.258567202836268,
+        "total_mean": 4.894504779561733,
+        "mean_routing_ms": 4.8064351107718215,
+        "mean_tools_ms": 0.0532500012519045,
+        "mean_llm_ms": 0.0
+      },
+      "llm": {
+        "count": 27,
+        "total_p50": 1320.5137499899138,
+        "total_p95": 15496.123058212106,
+        "total_mean": 2881.458172780522,
+        "mean_routing_ms": 14.159035520774692,
+        "mean_tools_ms": 0.0,
+        "mean_llm_ms": 2867.27279788573
+      },
+      "weather": {
+        "count": 12,
+        "total_p50": 155.45214551093522,
+        "total_p95": 306.75037063629134,
+        "total_mean": 182.25032291714646,
+        "mean_routing_ms": 2.0714339940847517,
+        "mean_tools_ms": 180.12522558759278,
+        "mean_llm_ms": 0.0
+      },
+      "web_search": {
+        "count": 15,
+        "total_p50": 412.7725829894189,
+        "total_p95": 428.7629088095855,
+        "total_mean": 412.0263224040779,
+        "mean_routing_ms": 7.548233327300598,
+        "mean_tools_ms": 404.44096660163876,
+        "mean_llm_ms": 0.0
+      }
+    },
+    "events": {
+      "llm unavailable": 2
+    }
+  },
+  "config": {
+    "accept_threshold": 0.63,
+    "use_reranker": false,
+    "default_location": "Singapore",
+    "costs": {
+      "missed_calculator": 2,
+      "missed_live_tool": 1.5,
+      "wrong_tool": 3,
+      "unneeded_tool": 1,
+      "clarify": 1.1
+    }
+  }
+}

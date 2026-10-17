@@ -1,0 +1,20 @@
+{"query": "wat is 832 divded by 13", "route": "calculator", "category": "clear"}
+{"query": "whats 3 to the powr of 7", "route": "calculator", "category": "clear"}
+{"query": "84 x 6", "route": "calculator", "category": "clear"}
+{"query": "sqrt 729", "route": "calculator", "category": "clear"}
+{"query": "convert 25c to f", "route": "calculator", "category": "overlap"}
+{"query": "wether in bangkok tmrw", "route": "weather", "category": "clear"}
+{"query": "is it rainin in hanoi rn", "route": "weather", "category": "clear"}
+{"query": "gonna storm in KL tonight?", "route": "weather", "category": "clear"}
+{"query": "need umbrella in taipei 2day?", "route": "weather", "category": "clear"}
+{"query": "who won ballon dor this yr", "route": "web_search", "category": "clear"}
+{"query": "nvidia news pls", "route": "web_search", "category": "clear"}
+{"query": "tesla stock price rn", "route": "web_search", "category": "clear"}
+{"query": "who's france's president now", "route": "web_search", "category": "clear"}
+{"query": "explian recursion w an example", "route": "llm", "category": "no_tool"}
+{"query": "write a limrick about a cat", "route": "llm", "category": "no_tool"}
+{"query": "how 2 center a div in css", "route": "llm", "category": "no_tool"}
+{"query": "diff between virus n bacteria", "route": "llm", "category": "no_tool"}
+{"query": "how does weather radar work??", "route": "llm", "category": "overlap"}
+{"query": "order pizza for me", "route": "llm", "category": "out_of_scope"}
+{"query": "20 percent of iphone 16 price", "route": "web_search", "category": "multi_step", "plan": ["web_search", "calculator"]}

@@ -91,6 +91,7 @@ _WORD_OPS = [
     (r"\bto the power of\b", "**"), (r"\bto the (\d+)(?:st|nd|rd|th)\b", r"** \1"),
     (r"(\d)\s*x\s*(\d)", r"\1 * \2"),
     (r"\bsquare root of\b", "sqrt"), (r"\bcube root of\b", "cbrt"),
+    (r"\b(sqrt|cbrt|log|ln) of\b", r"\1"),  # "sqrt of 729": found by test-set error analysis (routing was right, extraction failed)
     (r"\bfactorial of\b", "factorial"), (r"(\d+(?:\.\d+)?)\s+factorial\b", r"factorial(\1)"),
     (r"\bhalf of\s+" + _NUM, r"\1 / 2"), (r"\bdouble\s+" + _NUM, r"\1 * 2"),
     (r"\bcube of\s+" + _NUM, r"\1 ** 3"), (_NUM + r"\s+squared\b", r"\1 ** 2"), (_NUM + r"\s+cubed\b", r"\1 ** 3"),

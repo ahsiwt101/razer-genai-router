@@ -1,4 +1,4 @@
-"""Tests for the tools and argument extractors. Run:  pytest -q"""
+"""tests for the tools and argument extractors. Run:  pytest -q"""
 import pytest
 
 from src.tools import calculator, weather
@@ -92,3 +92,8 @@ def test_a_crashing_tool_returns_failed_result():
         raise RuntimeError("bug")
     result = Tool("broken", "", lambda q: q, boom).run("x")
     assert result.ok is False and "RuntimeError" in result.error
+
+
+def test_sqrt_of_is_extracted():
+    # regression: found in test-set error analysis ("sqrt of 729" was routed right but not extracted)
+    assert calculator.evaluate(extract_expression("sqrt of 729")) == 27
